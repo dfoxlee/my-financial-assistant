@@ -1,0 +1,68 @@
+.tableWrapper {
+   table-layout: fixed;
+   border-collapse: collapse;
+   margin: 0 auto;
+   width: 100%;
+}
+
+.tableHeader,
+.tableData {
+   text-align: center;
+}
+
+.tableHeader {
+   font-size: 12px;
+   font-weight: 500;
+   border-bottom: 2px solid var(--primary-700);
+}
+
+.tableHeaderInactive {
+   color: var(--grey-700);
+   font-size: 14px;
+}
+
+.tableHeaderOptions {
+   width: 5%;
+}
+
+.tableHeaderDate {
+   width: 10%;
+}
+
+.tableHeaderName {
+   width: 20%;
+}
+
+.tableHeaderDescription {
+   width: 30%;
+}
+
+.tableHeaderAmount {
+   width: 20%;
+}
+
+.tableHeaderCategory {
+   width: 20%;
+}
+
+.tableData {
+   padding: 5px 10px;
+}
+
+.tableBody .tableRow:nth-child(even) {
+   background-color: var(--grey-100);
+}
+
+.amountWrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.negativeDollarSign {
+   color: var(--danger-700);
+}
+
+.positiveDollarSign {
+   color: var(--success-700);
+}

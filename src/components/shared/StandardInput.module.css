@@ -1,0 +1,33 @@
+.input {
+   background: none;
+   border-radius: 5px;
+   padding: 3px 5px;
+   width: 100%;
+}
+
+.small {
+   font-size: 14px;
+}
+
+.medium {
+   font-size: 18px;
+}
+
+.large {
+   font-size: 24px;
+}
+
+.success {
+   border: 1px solid var(--success-700);
+   color: var(--success-700);
+}
+
+.danger {
+   border: 1px solid var(--danger-700);
+   color: var(--danger-700);
+}
+
+.standard {
+   border: 1px solid var(--primary-700);
+   color: var(--primary-700);
+}

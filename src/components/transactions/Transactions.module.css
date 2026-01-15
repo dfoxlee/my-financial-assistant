@@ -1,0 +1,28 @@
+.transactionBtnsWrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 15px;
+   margin-top: 10px;
+}
+
+.transactionSearchWrapper {
+   max-width: 400px;
+   margin: 20px auto 0;
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   position: relative;
+}
+
+.searchIcon {
+   color: var(--primary-300);
+   position: absolute;
+   right: 10px;
+}
+
+.transactionsTableWrapper {
+   max-height: 65vh;
+   overflow-y: auto;
+   margin-top: 20px;
+}

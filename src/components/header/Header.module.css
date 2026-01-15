@@ -1,0 +1,41 @@
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.titleWrapper {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   width: 100%;
+}
+
+.title {
+   background: linear-gradient(
+      to right,
+      var(--primary-700),
+      var(--success-700)
+   );
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+}
+
+.subTitle,
+.instructions {
+   text-align: center;
+   max-width: 600px;
+}
+
+.subTitle {
+   font-size: 32px;
+   margin-top: 30px;
+   color: var(--primary-700);
+}
+
+.instructions {
+   margin-top: 10px;
+   font-size: 18px;
+   color: var(--grey-800);
+}

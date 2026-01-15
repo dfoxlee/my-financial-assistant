@@ -1,0 +1,15 @@
+.container {
+   border-collapse: collapse;
+   width: 100%;
+}
+
+.tableHeader {
+   color: var(--grey-700);
+   font-weight: 600;
+   font-size: 14px;
+   border-bottom: 1px solid var(--grey-700);
+}
+
+.tableData {
+   padding: 5px 0;
+}

@@ -1,0 +1,10 @@
+.container {
+   border: 3px dashed var(--grey-400);
+   max-width: 600px;
+   padding: 10px 20px;
+   border-radius: 20px;
+   text-align: center;
+   color: var(--grey-700);
+   margin: 30px auto 0;
+   cursor: pointer;
+}

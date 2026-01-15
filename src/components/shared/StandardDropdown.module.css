@@ -1,0 +1,39 @@
+.container {
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.dropdownWrapper {
+   position: absolute;
+   top: 110%;
+   left: 0;
+   right: 0;
+   background-color: var(--grey-300);
+   border-radius: 5px;
+   z-index: 10;
+   padding: 5px 10px;
+}
+
+.btnWrapper {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border: 1px solid var(--primary-700);
+   border-radius: 5px;
+}
+
+.dropdownChevron {
+   color: var(--primary-700);
+}
+
+.separator {
+   flex: 1 0 auto;
+}
+
+.optionsWrapper {
+   max-height: 40vh;
+   overflow-y: auto;
+   margin-top: 5px;
+}

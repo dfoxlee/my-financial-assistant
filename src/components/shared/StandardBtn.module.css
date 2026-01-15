@@ -1,0 +1,45 @@
+.btn {
+   padding: 5px 10px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 8px;
+   background: none;
+   border-style: none;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.standardOutlined {
+   border: 1px solid var(--primary-700);
+   color: var(--primary-700);
+}
+
+.standardFilled {
+   background-color: var(--primary-700);
+   color: white;
+}
+
+.successOutline {
+   border: 1px solid var(--success-700);
+   color: var(--success-700);
+}
+
+.successFilled {
+   background-color: var(--success-700);
+   color: white;
+}
+
+.dangerOutline {
+   border: 1px solid var(--danger-700);
+   color: var(--danger-700);
+}
+
+.dangerFilled {
+   background-color: var(--danger-700);
+   color: white;
+}
+
+.standard {
+   color: var(--primary-700);
+}
