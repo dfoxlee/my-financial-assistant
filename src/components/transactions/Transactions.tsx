@@ -54,6 +54,7 @@ export default function Transactions({
                   text="Clear Transactions"
                   filled={true}
                   onClick={handleClearTransactionsClick}
+                  styleType="danger"
                />
             )}
          </div>

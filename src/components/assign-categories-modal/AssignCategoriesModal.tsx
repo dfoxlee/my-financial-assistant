@@ -93,12 +93,12 @@ export default function AssignCategoriesModal({
             />
             <div className={styles.titleWrapper}>
                <h3 className={styles.columnTitle}>Assign Categories</h3>
-               <StandardBtn
+               {/* <StandardBtn
                   text="Let Our AI Assistant Suggest Categories"
                   filled={true}
                   onClick={handleAiClick}
                   disabled={isAiLoading}
-               />
+               /> */}
             </div>
             <div className={styles.categorySelectorWrapper}>
                <table className={styles.tableWrapper}>
