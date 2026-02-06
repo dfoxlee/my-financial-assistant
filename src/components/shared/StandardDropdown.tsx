@@ -27,6 +27,7 @@ export default function StandardDropdown({
 
    // refs
    const dropdownRef = useRef<HTMLDivElement>(null);
+   const inputRef = useRef<HTMLInputElement>(null);
 
    // handlers
    const handleChange = (newOption: string) => {
@@ -58,9 +59,15 @@ export default function StandardDropdown({
       if (isDropdownOpen) {
          setSearchValue("");
       }
-      
+
       setIsDropdownOpen((prev) => !prev);
       setFilteredOptions(options);
+
+      if (!isDropdownOpen) {
+         setTimeout(() => {
+            inputRef.current?.focus();
+         }, 0);
+      }
    };
 
    const handleSearchChange = (value: string) => {
@@ -70,8 +77,8 @@ export default function StandardDropdown({
 
       setFilteredOptions(
          options.filter((option) =>
-            option.toLowerCase().includes(value.toLowerCase())
-         )
+            option.toLowerCase().includes(value.toLowerCase()),
+         ),
       );
    };
 
@@ -89,6 +96,7 @@ export default function StandardDropdown({
          {isDropdownOpen && (
             <div className={styles.dropdownWrapper}>
                <StandardInput
+                  ref={inputRef}
                   value={searchValue}
                   onChange={handleSearchChange}
                   placeholder="Search options..."

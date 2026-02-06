@@ -3,7 +3,6 @@ import { parseTransactions } from "../../../utils/csvParser";
 import { toast } from "react-toastify";
 import { parse } from "papaparse";
 import { useTransactionStore } from "../../../stores/transactionStore";
-import StandardBtn from "../../shared/StandardBtn";
 
 import styles from "./CSVUploader.module.css";
 

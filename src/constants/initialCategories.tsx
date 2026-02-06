@@ -27,5 +27,6 @@ export const initialCategories = [
    "Gift",
    "Other",
    "Vehicle Payment",
-   "Store Return"
+   "Store Return",
+   "Mortgage"
 ];

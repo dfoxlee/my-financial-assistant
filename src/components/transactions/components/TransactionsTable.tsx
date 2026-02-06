@@ -17,6 +17,7 @@ import { useCategories } from "../../../hooks/useCategories";
 import StandardDropdown from "../../shared/StandardDropdown";
 
 import styles from "./TransactionsTable.module.css";
+import type { TransactionType } from "../../../types/transactionTypes";
 
 export default function TransactionsTable({
    searchInput,
@@ -29,17 +30,19 @@ export default function TransactionsTable({
    // stores
    const transactions = useTransactionStore((store) => store.transactions);
    const setTransactions = useTransactionStore(
-      (store) => store.setTransactions
+      (store) => store.setTransactions,
    );
    const categorizedTransactions = useTransactionStore(
-      (store) => store.categorizedTransactions
+      (store) => store.categorizedTransactions,
    );
    const setCategorizedTransactions = useTransactionStore(
-      (store) => store.setCategorizedTransactions
+      (store) => store.setCategorizedTransactions,
    );
 
    // states
-   const [filteredTransactions, setFilteredTransactions] = useState([]);
+   const [filteredTransactions, setFilteredTransactions] = useState<
+      TransactionType[]
+   >([]);
 
    // effects
    useEffect(() => {
@@ -63,7 +66,7 @@ export default function TransactionsTable({
                   ?.toLowerCase()
                   .includes(lowercasedSearchInput)
             );
-         })
+         }),
       );
    }, [searchInput, transactions]);
 
@@ -95,7 +98,7 @@ export default function TransactionsTable({
 
       if (categorizedTransactions.find((ct) => ct.name === transaction.name)) {
          const updatedCategorizedTransactions = categorizedTransactions.filter(
-            (ct) => !(ct.name === transaction.name)
+            (ct) => !(ct.name === transaction.name),
          );
 
          setCategorizedTransactions(updatedCategorizedTransactions);
@@ -158,7 +161,7 @@ export default function TransactionsTable({
    };
 
    const handleSortChange = (
-      field: "date" | "name" | "amount" | "category"
+      field: "date" | "name" | "amount" | "category",
    ) => {
       if (!transactions) return;
 
@@ -236,8 +239,8 @@ export default function TransactionsTable({
                            sorts.dateDir === "asc"
                               ? CalendarArrowUp
                               : sorts.dateDir === "desc"
-                              ? CalendarArrowDown
-                              : undefined
+                                ? CalendarArrowDown
+                                : undefined
                         }
                         onClick={() => handleSortChange("date")}
                      />
@@ -252,8 +255,8 @@ export default function TransactionsTable({
                            sorts.nameDir === "asc"
                               ? ArrowDownAz
                               : sorts.nameDir === "desc"
-                              ? ArrowDownZa
-                              : undefined
+                                ? ArrowDownZa
+                                : undefined
                         }
                         onClick={() => handleSortChange("name")}
                      />
@@ -271,8 +274,8 @@ export default function TransactionsTable({
                            sorts.amountDir === "asc"
                               ? ArrowUp01
                               : sorts.amountDir === "desc"
-                              ? ArrowDown01
-                              : undefined
+                                ? ArrowDown01
+                                : undefined
                         }
                         onClick={() => handleSortChange("amount")}
                      />
@@ -287,8 +290,8 @@ export default function TransactionsTable({
                            sorts.categoryDir === "asc"
                               ? ArrowUpAZ
                               : sorts.categoryDir === "desc"
-                              ? ArrowDownZa
-                              : undefined
+                                ? ArrowDownZa
+                                : undefined
                         }
                         onClick={() => handleSortChange("category")}
                      />
@@ -351,7 +354,7 @@ export default function TransactionsTable({
                                  onChange={(newAmount: string) =>
                                     handleNewAmountChange(
                                        transaction.id,
-                                       newAmount
+                                       newAmount,
                                     )
                                  }
                                  styleType={

@@ -1,8 +1,6 @@
 import { FileDown } from "lucide-react";
 import StandardBtn from "../../shared/StandardBtn";
 
-import styles from "./TemplateDownloader.module.css";
-
 export default function TemplateDownloader() {
    // handlers
    const handleTemplateDownload = () => {

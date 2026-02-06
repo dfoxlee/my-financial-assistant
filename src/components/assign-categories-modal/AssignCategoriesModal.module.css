@@ -7,6 +7,15 @@
    z-index: 10;
 }
 
+.backgroundBtn {
+   position: absolute;
+   inset: 0;
+   background: transparent;
+   border: none;
+   cursor: default;
+   z-index: 9;
+}
+
 .wrapper {
    background-color: var(--background);
    padding: 30px;
@@ -15,6 +24,7 @@
    max-width: 1200px;
    max-height: 90vh;
    overflow-y: auto;
+   z-index: 10;
 }
 
 .titleWrapper {

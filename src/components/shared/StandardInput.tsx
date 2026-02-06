@@ -1,4 +1,4 @@
-import { useMemo, type ChangeEvent } from "react";
+import { useMemo, type ChangeEvent, type Ref } from "react";
 import styles from "./StandardInput.module.css";
 
 interface StandardInputProps {
@@ -9,6 +9,7 @@ interface StandardInputProps {
    style?: React.CSSProperties;
    size?: "small" | "medium" | "large";
    styleType?: "success" | "danger" | "standard";
+   ref?: Ref<HTMLInputElement>;
 }
 
 export default function StandardInput({
@@ -19,6 +20,7 @@ export default function StandardInput({
    style,
    size,
    styleType = "standard",
+   ref,
 }: StandardInputProps) {
    // memoized values
    const classNames = useMemo(() => {
@@ -74,6 +76,7 @@ export default function StandardInput({
          onChange={handleOnChange}
          onBlur={handleBlur}
          placeholder={placeholder}
+         ref={ref}
       />
    );
 }

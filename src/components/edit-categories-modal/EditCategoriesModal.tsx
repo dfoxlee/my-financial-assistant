@@ -14,21 +14,10 @@ export default function EditCategoriesModal({
 
    // handlers
    const handleAddCategoryClick = () => {
-      const maxId =
-         categories?.reduce((acc, curr) => {
-            const id = parseInt(curr.split(" ")[2]) || 0;
-            return id > acc ? id : acc;
-         }, 0) || 0;
-
-      const newCategory = {
-         id: maxId + 1,
-         name: `New Category ${maxId + 1}`,
-      };
-
       const newCategories = categories
-         ? [newCategory, ...categories]
-         : [newCategory];
-         
+         ? [...categories, `New Category ${categories.length + 1}`]
+         : [`New Category 1`];
+
       setCategories(newCategories);
    };
 

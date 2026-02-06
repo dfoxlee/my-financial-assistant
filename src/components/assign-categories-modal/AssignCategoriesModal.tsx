@@ -3,11 +3,11 @@ import { useSummary } from "../../hooks/useSummary";
 import { useTransactionStore } from "../../stores/transactionStore";
 import { useCategories } from "../../hooks/useCategories";
 import StandardDropdown from "../shared/StandardDropdown";
+// import { toast } from "react-toastify";
+// import { useState } from "react";
+// import { fetchAiCategorizedSuggestions } from "../../services/transactionServices";
 
 import styles from "./AssignCategoriesModal.module.css";
-import { toast } from "react-toastify";
-import { useState } from "react";
-import { fetchAiCategorizedSuggestions } from "../../services/transactionServices";
 
 interface AssignCategoriesModalProps {
    closeAssignCategoriesModal: () => void;
@@ -21,18 +21,18 @@ export default function AssignCategoriesModal({
    const { categories } = useCategories();
 
    // states
-   const [isAiLoading, setIsAiLoading] = useState(false);
+   // const [isAiLoading, setIsAiLoading] = useState(false);
 
    // stores
    const transactions = useTransactionStore((store) => store.transactions);
    const categorizedTransactions = useTransactionStore(
-      (store) => store.categorizedTransactions
+      (store) => store.categorizedTransactions,
    );
    const setTransactions = useTransactionStore(
-      (store) => store.setTransactions
+      (store) => store.setTransactions,
    );
    const setCategorizedTransactions = useTransactionStore(
-      (store) => store.setCategorizedTransactions
+      (store) => store.setCategorizedTransactions,
    );
 
    // handlers
@@ -62,29 +62,33 @@ export default function AssignCategoriesModal({
       }
    };
 
-   const handleAiClick = async () => {
-      if (!transactions || transactions.length === 0) return;
+   // const handleAiClick = async () => {
+   //    if (!transactions || transactions.length === 0) return;
 
-      try {
-         setIsAiLoading(true);
+   //    try {
+   //       setIsAiLoading(true);
 
-         const response = await fetchAiCategorizedSuggestions(uniqueNames);
+   //       const response = await fetchAiCategorizedSuggestions(uniqueNames);
 
-         // setTransactions(response.transactions);
-         console.log(response);
-      } catch (error) {
-         console.error(error);
+   //       // setTransactions(response.transactions);
+   //       console.log(response);
+   //    } catch (error) {
+   //       console.error(error);
 
-         toast.error(
-            "An error occurred while trying to suggest categories. Please try again."
-         );
-      } finally {
-         setIsAiLoading(false);
-      }
-   };
+   //       toast.error(
+   //          "An error occurred while trying to suggest categories. Please try again."
+   //       );
+   //    } finally {
+   //       setIsAiLoading(false);
+   //    }
+   // };
 
    return (
       <div className={styles.container}>
+         <button
+            className={styles.backgroundBtn}
+            onClick={closeAssignCategoriesModal}
+         ></button>
          <div className={styles.wrapper}>
             <StandardBtn
                text="Close"
@@ -116,7 +120,7 @@ export default function AssignCategoriesModal({
                               <StandardDropdown
                                  value={
                                     categorizedTransactions.find(
-                                       (ct) => ct.name === name
+                                       (ct) => ct.name === name,
                                     )?.category ?? ""
                                  }
                                  dropdownName="..."

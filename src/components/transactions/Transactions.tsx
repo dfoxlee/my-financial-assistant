@@ -3,10 +3,9 @@ import { useTransactionStore } from "../../stores/transactionStore";
 import StandardBtn from "../shared/StandardBtn";
 import StandardInput from "../shared/StandardInput";
 import TransactionsTable from "./components/TransactionsTable";
+import { useState } from "react";
 
 import styles from "./Transactions.module.css";
-import { useState } from "react";
-import CategoryAutoComplete from "../shared/CategoryAutocomplete";
 
 export default function Transactions({
    openAssignCategoriesModal,
